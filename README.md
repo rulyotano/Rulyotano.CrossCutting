@@ -4,7 +4,15 @@ Math helpers. The main feature right now is the interpolation by using Beizer cu
 ## Interpolations
 ### Beizer Curves
 
-This library can be used as a nuget package. Import `Rulyotano.Math`. Then can be used like this:
+This library can be used as a nuget package. 
+
+Import the [Rulyotano.Math Nuget Package](https://www.nuget.org/packages/Rulyotano.Math/) like this:
+
+```
+Install-Package Rulyotano.Math -Version x.x.x
+```
+
+Then can be used like this:
 
 ```c#
   var result = Rulyotano.Math.Interpolation.PoinsToBeizerCurves(points, isClosedCurve, smoothValue);

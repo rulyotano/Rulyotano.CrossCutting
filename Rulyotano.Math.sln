@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math", "Rulyotano.Math\Rulyotano.Math.csproj", "{90098195-EAE1-458A-B5E8-D18B83CBA4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Tests", "Rulyotano.Math.Tests\Rulyotano.Math.Tests.csproj", "{F90C3AFC-5952-4EAE-860B-D83DE943D91C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{90098195-EAE1-458A-B5E8-D18B83CBA4A0} = {90098195-EAE1-458A-B5E8-D18B83CBA4A0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90098195-EAE1-458A-B5E8-D18B83CBA4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90098195-EAE1-458A-B5E8-D18B83CBA4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90098195-EAE1-458A-B5E8-D18B83CBA4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90098195-EAE1-458A-B5E8-D18B83CBA4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90C3AFC-5952-4EAE-860B-D83DE943D91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90C3AFC-5952-4EAE-860B-D83DE943D91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90C3AFC-5952-4EAE-860B-D83DE943D91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90C3AFC-5952-4EAE-860B-D83DE943D91C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16616573-795F-4246-9C3C-F3E4CD029E81}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <Authors>Raul Otaño Hurtado</Authors>
+    <Company>rulyotano</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Math helpers. Mainly used for interpolation a set of 2D points by using Beizer Curves algorithm.</Description>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.Math</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rulyotano/Rulyotano.Math</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Interpolation, Beizer, Curves, Points, 2D, Math</PackageTags>
+  </PropertyGroup>
+
+</Project>

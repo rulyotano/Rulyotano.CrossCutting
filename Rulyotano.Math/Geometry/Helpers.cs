@@ -57,7 +57,7 @@ namespace Rulyotano.Math.Geometry
         /// <summary>
         /// Find best place to insert a new point by minimizing the total length.
         /// Useful for instance when want to add points to an ordered points sequence,
-        /// that could be interpolated then using Beizer curves.
+        /// that could be interpolated then using Bezier curves.
         /// </summary>
         /// <param name="newPoint"></param>
         /// <param name="points"></param>

@@ -5,11 +5,11 @@
     <Authors>Raul Otaño Hurtado</Authors>
     <Company>rulyotano</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>Math helpers. Mainly used for interpolation a set of 2D points by using Beizer Curves algorithm.</Description>
+    <Description>Math helpers. Mainly used for interpolation a set of 2D points by using Cubic Bezier Curves algorithm.</Description>
     <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.Math</PackageProjectUrl>
     <RepositoryUrl>https://github.com/rulyotano/Rulyotano.Math</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageTags>Interpolation, Beizer, Curves, Points, 2D, Math</PackageTags>
+    <PackageTags>Interpolation, Bezier, Curves, Points, 2D, Math</PackageTags>
   </PropertyGroup>
 
 </Project>

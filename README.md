@@ -1,3 +1,6 @@
+<a href="https://www.nuget.org/packages/Rulyotano.Math"><img src="https://img.shields.io/nuget/v/Rulyotano.Math?logo=nuget"/></a>
+<img src="https://img.shields.io/github/last-commit/rulyotano/Rulyotano.Math?logo=github"/>
+
 # Rulyotano.Math
 Math helpers. The main feature right now is the interpolation by using Bezier curves
 

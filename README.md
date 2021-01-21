@@ -26,7 +26,7 @@ A more detailed usage example can be found at this wpf sample: [rulyotano/wpf-be
 
 - See this article: [Interpolate 2D points, using Bezier curves in WPF](http://www.codeproject.com/Articles/769055/Interpolate-2D-points-usign-Bezier-curves-in-WPF)
 
-#### Converting to Bezier Interpolation results to svg path
+#### Converting from Bezier interpolation results to svg path
 
 You can convert the result of the `PointsToBezierCurves` by using an extension method named `BezierToPath`:
 

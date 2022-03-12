@@ -1,4 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Rulyotano.Math.Interpolation.Bezier</PackageId>
+    <Description>Tools for interpolation a set of 2D points by using Cubic Bezier Curves algorithm.</Description>
+    <PackageTags>Interpolation, Bezier, Curves, Points, 2D, Math</PackageTags>
+    <Version>1.9.9</Version>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.Math.Interpolation.Bezier</PackageProjectUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj" />
     <ProjectReference Include="..\Rulyotano.Math\Rulyotano.Math.csproj" />

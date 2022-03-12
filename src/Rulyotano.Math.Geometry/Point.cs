@@ -8,13 +8,13 @@
             Y = y;
         }
 
-        public double X { get; set; }
+        public double X { get; }
 
-        public double Y { get; set; }
+        public double Y { get; }
 
         public override bool Equals(object obj)
         {
-            var point = obj as Point;
+            if (!(obj is Point point)) return false;
 
             return Numeric.DoubleEquals(X, point.X) && Numeric.DoubleEquals(Y, point.Y);
         }

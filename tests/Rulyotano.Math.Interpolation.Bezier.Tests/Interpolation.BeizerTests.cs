@@ -1,6 +1,5 @@
 ﻿using Xunit;
 using Rulyotano.Math.Geometry;
-using Rulyotano.Math.Interpolation.Bezier;
 using System.Linq;
 
 namespace Rulyotano.Math.Interpolation.Bezier.Tests
@@ -8,30 +7,30 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
     public class InterpolationBezierTests
     {
         #region PointsToBezierCurves
-        private readonly Point[] samplePoints1 = new[] { new Point(0, 0), new Point(300, -100), new Point(15, 66) };
+        private readonly Point[] _samplePoints1 = new[] { new Point(0, 0), new Point(300, -100), new Point(15, 66) };
 
         [Fact]
         public void InterpolatePointWithBezierCurves_Should_StartAndEndsSamePoints()
         {
-            var result = BezierInterpolation.PointsToBezierCurves(samplePoints1.ToList(), false);
+            var result = BezierInterpolation.PointsToBezierCurves(_samplePoints1.ToList(), false);
 
-            Assert.Equal(samplePoints1.First(), result.First().StartPoint);
-            Assert.Equal(samplePoints1.Last(), result.Last().EndPoint);
+            Assert.Equal(_samplePoints1.First(), result.First().StartPoint);
+            Assert.Equal(_samplePoints1.Last(), result.Last().EndPoint);
         }
 
         [Fact]
         public void WhenClosedCurves_InterpolatePointWithBezierCurves_Should_EndsWithStartPoint()
         {
-            var result = BezierInterpolation.PointsToBezierCurves(samplePoints1.ToList(), true);
+            var result = BezierInterpolation.PointsToBezierCurves(_samplePoints1.ToList(), true);
 
-            Assert.Equal(samplePoints1.First(), result.First().StartPoint);
-            Assert.Equal(samplePoints1.First(), result.Last().EndPoint);
+            Assert.Equal(_samplePoints1.First(), result.First().StartPoint);
+            Assert.Equal(_samplePoints1.First(), result.Last().EndPoint);
         }
 
         [Fact]
         public void WhenLessThan3Points_InterpolatePointWithBezierCurves_ShouldReturnEmptyList()
         {
-            var result = BezierInterpolation.PointsToBezierCurves(samplePoints1.Take(2).ToList(), false);
+            var result = BezierInterpolation.PointsToBezierCurves(_samplePoints1.Take(2).ToList(), false);
 
             Assert.Empty(result);
         }

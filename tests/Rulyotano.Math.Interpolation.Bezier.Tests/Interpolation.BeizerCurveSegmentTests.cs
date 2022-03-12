@@ -1,6 +1,5 @@
 ﻿using Xunit;
 using Rulyotano.Math.Geometry;
-using Rulyotano.Math.Interpolation.Bezier;
 
 namespace Rulyotano.Math.Interpolation.Bezier.Tests
 {

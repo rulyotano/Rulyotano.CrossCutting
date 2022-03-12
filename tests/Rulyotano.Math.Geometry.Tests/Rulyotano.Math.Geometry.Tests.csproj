@@ -1,5 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <PackageReference Include="JetBrains.DotMemoryUnit" Version="3.1.20200127.214830" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj" />
   </ItemGroup>
 </Project>

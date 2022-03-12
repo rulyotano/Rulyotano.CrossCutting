@@ -1,7 +1,6 @@
 ﻿using Xunit;
-using Rulyotano.Math.Geometry;
 
-namespace Rulyotano.Math.Tests.Geometry
+namespace Rulyotano.Math.Geometry.Tests
 {
     public class PointTests
     {
@@ -27,6 +26,14 @@ namespace Rulyotano.Math.Tests.Geometry
         public void When_XandYAreQueal_Should_BeEqual(double x1, double y1, double x2, double y2, bool expected)
         {
             Assert.Equal(expected, new Point(x1, y1).Equals(new Point(x2, y2)));
+        }
+
+        [Fact]
+        public void WhenDifferentType_Equals_ShouldReturnFalse()
+        {
+            var newPoint = new Point(FakeX, FakeY);
+
+            Assert.False(newPoint.Equals("other type"));
         }
     }
 }

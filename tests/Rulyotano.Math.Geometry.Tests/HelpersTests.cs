@@ -1,10 +1,7 @@
-﻿using Xunit;
-using Rulyotano.Math.Geometry;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Xunit;
 
-namespace Rulyotano.Math.Tests.Geometry
+namespace Rulyotano.Math.Geometry.Tests
 {
     public class HelpersTests
     {

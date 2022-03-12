@@ -69,7 +69,7 @@ namespace Rulyotano.Math.Geometry
             var bestIndex = 0;
             var bestDistance = EuclideanDistance(newPoint, points.First());
 
-            for (int i = 1; i < points.Count; i++)
+            for (var i = 1; i < points.Count; i++)
             {
                 var previousPoint = points[i - 1];
                 var currentPoint = points[i];
@@ -77,11 +77,9 @@ namespace Rulyotano.Math.Geometry
                 var distance1 = EuclideanDistance(previousPoint, newPoint);
                 var distance2 = EuclideanDistance(newPoint, currentPoint);
                 var distanceDifference = distance1 + distance2 - oldDistance;
-                if (distanceDifference < bestDistance)
-                {
-                    bestDistance = distanceDifference;
-                    bestIndex = i;
-                }
+                if (distanceDifference >= bestDistance) continue;
+                bestDistance = distanceDifference;
+                bestIndex = i;
             }
 
 

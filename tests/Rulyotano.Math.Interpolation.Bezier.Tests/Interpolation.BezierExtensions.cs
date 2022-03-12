@@ -1,6 +1,5 @@
 ﻿using Xunit;
 using System.Collections.Generic;
-using Rulyotano.Math.Interpolation.Bezier;
 
 namespace Rulyotano.Math.Interpolation.Bezier.Tests
 {
@@ -9,7 +8,7 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         [Fact]
         public void WhenEmpty_BezierToPath_Should_ReturnEmpty()
         {
-            var list = new List<BezierCurveSegment> { };
+            var list = new List<BezierCurveSegment>();
 
             var result = list.BezierToPath();
             Assert.Equal("", result);
@@ -20,11 +19,11 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var list = new List<BezierCurveSegment>
             {
-                new BezierCurveSegment(
-                    new Math.Geometry.Point(1, 2),
-                    new Math.Geometry.Point(3, 4),
-                    new Math.Geometry.Point(5, 6),
-                    new Math.Geometry.Point(7, 8))
+                new(
+                    new Geometry.Point(1, 2),
+                    new Geometry.Point(3, 4),
+                    new Geometry.Point(5, 6),
+                    new Geometry.Point(7, 8))
             };
 
             var result = list.BezierToPath();
@@ -36,17 +35,17 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var list = new List<BezierCurveSegment>
             {
-                new BezierCurveSegment(
-                    new Math.Geometry.Point(1, 2),
-                    new Math.Geometry.Point(3, 4),
-                    new Math.Geometry.Point(5, 6),
-                    new Math.Geometry.Point(7, 8)),
+                new(
+                    new Geometry.Point(1, 2),
+                    new Geometry.Point(3, 4),
+                    new Geometry.Point(5, 6),
+                    new Geometry.Point(7, 8)),
 
-                new BezierCurveSegment(
-                    new Math.Geometry.Point(7, 8),
-                    new Math.Geometry.Point(9, 10),
-                    new Math.Geometry.Point(11, 12),
-                    new Math.Geometry.Point(13, 14))
+                new(
+                    new Geometry.Point(7, 8),
+                    new Geometry.Point(9, 10),
+                    new Geometry.Point(11, 12),
+                    new Geometry.Point(13, 14))
             };
 
             var result = list.BezierToPath();
@@ -58,11 +57,11 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var list = new List<BezierCurveSegment>
             {
-                new BezierCurveSegment(
-                    new Math.Geometry.Point(1, 2.4357),
-                    new Math.Geometry.Point(3.15434534, 4.231),
-                    new Math.Geometry.Point(5.776, 6.8954244),
-                    new Math.Geometry.Point(7.199999, 8.111111))
+                new(
+                    new Geometry.Point(1, 2.4357),
+                    new Geometry.Point(3.15434534, 4.231),
+                    new Geometry.Point(5.776, 6.8954244),
+                    new Geometry.Point(7.199999, 8.111111))
             };
 
             var result = list.BezierToPath();
@@ -74,11 +73,11 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var list = new List<BezierCurveSegment>
             {
-                new BezierCurveSegment(
-                    new Math.Geometry.Point(-1, 2.4357),
-                    new Math.Geometry.Point(-3.15434534, 4.231),
-                    new Math.Geometry.Point(5.776, -6.8954244),
-                    new Math.Geometry.Point(7.199999, -8.111111))
+                new(
+                    new Geometry.Point(-1, 2.4357),
+                    new Geometry.Point(-3.15434534, 4.231),
+                    new Geometry.Point(5.776, -6.8954244),
+                    new Geometry.Point(7.199999, -8.111111))
             };
 
             var result = list.BezierToPath();

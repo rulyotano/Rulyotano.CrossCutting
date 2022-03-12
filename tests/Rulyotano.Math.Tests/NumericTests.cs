@@ -1,5 +1,4 @@
 using Xunit;
-using Rulyotano.Math;
 
 namespace Rulyotano.Math.Tests
 {

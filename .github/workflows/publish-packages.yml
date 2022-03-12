@@ -1,0 +1,42 @@
+name: Publish Nuget packages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish Rulyotano.Math
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/Rulyotano.Math/Rulyotano.Math.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+    - name: Publish Rulyotano.Math.Geometry
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/Rulyotano.Math.Geometry/Rulyotano.Math.Geometry.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+    - name: Publish Rulyotano.Math.Interpolation.Bezier
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/Rulyotano.Math.Interpolation.Bezier/Rulyotano.Math.Interpolation.Bezier.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}

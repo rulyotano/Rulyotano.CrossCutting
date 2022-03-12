@@ -1,4 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Rulyotano.Math.Geometry</PackageId>
+    <Description>Math Geometry helpers. For example point definition, distance calculation, metrics conversions.</Description>
+    <PackageTags>Math, Geometry, Helpers</PackageTags>
+    <Version>1.9.9</Version>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.Math.Geometry</PackageProjectUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Rulyotano.Math\Rulyotano.Math.csproj" />
   </ItemGroup>

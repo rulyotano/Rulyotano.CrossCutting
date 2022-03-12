@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <Description>Math helpers. Mainly used for interpolation a set of 2D points by using Cubic Bezier Curves algorithm.</Description>
-    <PackageTags>Interpolation, Bezier, Curves, Points, 2D, Math</PackageTags>
-    <Version>1.0.0</Version>
-    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.Math</PackageProjectUrl>
+    <PackageId>Rulyotano.Math</PackageId>
+    <Description>Genral math helpers. For example: Numerics helpers. (NOTE: Interpolation with Bezier was moved to Rulyotano.Math.Interpolation.Bezier package)</Description>
+    <PackageTags>Math, helpers, Numerics</PackageTags>
+    <Version>2.0.0</Version>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.Math</PackageProjectUrl>
   </PropertyGroup>
-
 </Project>

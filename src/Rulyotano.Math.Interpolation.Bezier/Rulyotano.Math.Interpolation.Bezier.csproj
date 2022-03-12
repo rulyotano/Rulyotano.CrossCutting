@@ -9,6 +9,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj" />
-    <ProjectReference Include="..\Rulyotano.Math\Rulyotano.Math.csproj" />
   </ItemGroup>
 </Project>

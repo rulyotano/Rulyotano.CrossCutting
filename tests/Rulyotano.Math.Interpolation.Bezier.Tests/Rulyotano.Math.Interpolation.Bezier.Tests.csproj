@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Rulyotano.Math.Interpolation.Bezier\Rulyotano.Math.Interpolation.Bezier.csproj" />
+  </ItemGroup>
+</Project>

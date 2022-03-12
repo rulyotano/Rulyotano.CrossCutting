@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Rulyotano.Math
+namespace Rulyotano.Math.Interpolation.Bezier
 {
-    public static partial class Interpolation
+    public static class BezierInterpolation
     {
         /// <summary>
         /// Interpolate a list of points to a list of ordered Bezier curve segments
@@ -16,7 +16,8 @@ namespace Rulyotano.Math
         public static IList<BezierCurveSegment> PointsToBezierCurves(IList<Point> points, bool isClosedCurve, double smoothValue = 0.8)
         {
             if (points.Count < 3)
-                return null;
+                return new List<BezierCurveSegment>();
+
             var toRet = new List<BezierCurveSegment>();
 
             //if is close curve then add the first point at the end

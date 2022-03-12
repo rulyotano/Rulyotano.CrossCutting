@@ -1,6 +1,6 @@
 ﻿using Rulyotano.Math.Geometry;
 
-namespace Rulyotano.Math
+namespace Rulyotano.Math.Interpolation.Bezier
 {
     public class BezierCurveSegment
     {
@@ -36,7 +36,8 @@ namespace Rulyotano.Math
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return StartPoint.GetHashCode() << 5 + EndPoint.GetHashCode() << 10 +
+              FirstControlPoint.GetHashCode() << 15 + SecondControlPoint.GetHashCode() << 20;
         }
     }
 }

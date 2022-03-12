@@ -1,80 +1,80 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using Rulyotano.Math.Geometry;
+using Rulyotano.Math.Interpolation.Bezier;
 
-namespace Rulyotano.Math.Tests.Interpolation.Bezier
+namespace Rulyotano.Math.Interpolation.Bezier.Tests
 {
-    [TestClass]
     public class InterpolationBezierCurveSegmentTests
     {
-        Point[] _testPoints = new[] {
+        private readonly Point[] _testPoints = new[] {
             new Point(12, 33),
             new Point(1.43111111, 2),
             new Point(4, 2),
             new Point(5, 30)
         };
 
-        [TestMethod("Should initialize the points in order Start, FirstControl, SecondControl and EndPoint")]
-        public void Constructor()
+        [Fact]
+        public void Constructor_Should_InitializeThePointsInOrder_Start_FirstControl_SecondControl_And_Endpoint()
         {
             var result = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
-            Assert.AreEqual(_testPoints[0], result.StartPoint);
-            Assert.AreEqual(_testPoints[1], result.FirstControlPoint);
-            Assert.AreEqual(_testPoints[2], result.SecondControlPoint);
-            Assert.AreEqual(_testPoints[3], result.EndPoint);
+            Assert.Equal(_testPoints[0], result.StartPoint);
+            Assert.Equal(_testPoints[1], result.FirstControlPoint);
+            Assert.Equal(_testPoints[2], result.SecondControlPoint);
+            Assert.Equal(_testPoints[3], result.EndPoint);
         }
 
         #region Equals
-        [TestMethod("Equals should be true when all points")]
-        public void EqualsShouldReturnTrue()
+        [Fact]
+        public void WhenAllPointsAreEqual_Equals_Should_ReturnTrue()
         {
             var curve1 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
             var curve2 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
 
-            Assert.AreEqual(curve1, curve2);
+            Assert.Equal(curve1, curve2);
         }
 
-        [TestMethod("Equals should be false when start point is different")]
-        public void EqualsShouldReturnFalseStartPoint()
+        [Fact]
+        public void WhenStartPointIsDifferent_Equals_Should_ReturnFalse()
         {
             var curve1 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
             var curve2 = new BezierCurveSegment(new Point(0, 0), _testPoints[1], _testPoints[2], _testPoints[3]);
 
-            Assert.AreNotEqual(curve1, curve2);
+            Assert.NotEqual(curve1, curve2);
         }
 
-        [TestMethod("Equals should be false when first control point is different")]
-        public void EqualsShouldReturnFalseControl1()
+        [Fact]
+        public void WhenFirstControlPointIsDifferent_Equals_Should_ReturnFalse()
         {
             var curve1 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
             var curve2 = new BezierCurveSegment(_testPoints[0], new Point(0, 0), _testPoints[2], _testPoints[3]);
 
-            Assert.AreNotEqual(curve1, curve2);
+            Assert.NotEqual(curve1, curve2);
         }
 
-        [TestMethod("Equals should be false when second control point is different")]
-        public void EqualsShouldReturnFalseControl2()
+        [Fact]
+        public void WhenSecondControlPointIsDifferent_Equals_Should_ReturnFalse()
         {
             var curve1 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
             var curve2 = new BezierCurveSegment(_testPoints[0], _testPoints[1], new Point(0, 0), _testPoints[3]);
 
-            Assert.AreNotEqual(curve1, curve2);
+            Assert.NotEqual(curve1, curve2);
         }
 
-        [TestMethod("Equals should be false when last point is different")]
-        public void EqualsShouldReturnFalseLastPoint()
+        [Fact]
+        public void WhenLastPointIsDifferent_Equals_Should_ReturnFalse()
         {
             var curve1 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
             var curve2 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], new Point(0, 0));
 
-            Assert.AreNotEqual(curve1, curve2);
+            Assert.NotEqual(curve1, curve2);
         }
 
-        [TestMethod("Equals should be false when any other type")]
-        public void EqualsShouldReturnFalseOtherType()
+        [Fact]
+        public void WhenAnyOtherType_Equals_Should_ReturnFalse()
         {
             var curve1 = new BezierCurveSegment(_testPoints[0], _testPoints[1], _testPoints[2], _testPoints[3]);
 
-            Assert.AreNotEqual(curve1, "");
+            Assert.False(curve1.Equals(""));
         }
         #endregion
 

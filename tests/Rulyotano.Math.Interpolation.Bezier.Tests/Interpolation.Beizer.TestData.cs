@@ -1,7 +1,7 @@
 ﻿using Rulyotano.Math.Geometry;
 using System.Collections.Generic;
 
-namespace Rulyotano.Math.Tests.Interpolation.Bezier
+namespace Rulyotano.Math.Interpolation.Bezier.Tests
 {
 
     public static class TestDataBezier

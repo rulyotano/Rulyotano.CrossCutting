@@ -1,3 +1,6 @@
+<a href="https://www.nuget.org/packages/Rulyotano.Math.Geometry"><img src="https://img.shields.io/nuget/v/Rulyotano.Math.Geometry?logo=nuget"/></a>
+<img src="https://img.shields.io/github/last-commit/rulyotano/Rulyotano.CrossCutting?logo=github"/>
+
 # Rulyotano.Math.Geometry
 Geometry helpers
 

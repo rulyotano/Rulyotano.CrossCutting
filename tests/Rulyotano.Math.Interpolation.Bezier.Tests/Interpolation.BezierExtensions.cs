@@ -1,23 +1,22 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using System.Collections.Generic;
+using Rulyotano.Math.Interpolation.Bezier;
 
-namespace Rulyotano.Math.Tests.Interpolation.Bezier
+namespace Rulyotano.Math.Interpolation.Bezier.Tests
 {
-
-    [TestClass]
     public class InterpolationExtensionsBezierTests
     {
-        [TestMethod("BezierToPath empty should return empty string")]
-        public void BezierToPathEmpty()
+        [Fact]
+        public void WhenEmpty_BezierToPath_Should_ReturnEmpty()
         {
             var list = new List<BezierCurveSegment> { };
 
             var result = list.BezierToPath();
-            Assert.AreEqual("", result);
+            Assert.Equal("", result);
         }
 
-        [TestMethod("BezierToPath basic example (one item with integer values)")]
-        public void BezierToPathBasic()
+        [Fact]
+        public void WhenOneItemWithIntegerValues_BezierToPath_Should_MatchExpectedResult()
         {
             var list = new List<BezierCurveSegment>
             {
@@ -29,11 +28,11 @@ namespace Rulyotano.Math.Tests.Interpolation.Bezier
             };
 
             var result = list.BezierToPath();
-            Assert.AreEqual("M1,2 C3,4 5,6 7,8", result);
+            Assert.Equal("M1,2 C3,4 5,6 7,8", result);
         }
 
-        [TestMethod("BezierToPath several items, should concatenate segments")]
-        public void BezierToPathTwoSegmentsIntegerValues()
+        [Fact]
+        public void WhenSeveralItems_BezierToPath_Should_ConcatenateSegments()
         {
             var list = new List<BezierCurveSegment>
             {
@@ -51,11 +50,11 @@ namespace Rulyotano.Math.Tests.Interpolation.Bezier
             };
 
             var result = list.BezierToPath();
-            Assert.AreEqual("M1,2 C3,4 5,6 7,8 C9,10 11,12 13,14", result);
+            Assert.Equal("M1,2 C3,4 5,6 7,8 C9,10 11,12 13,14", result);
         }
 
-        [TestMethod("BezierToPath with float values should round up to 3 decimals")]
-        public void BezierToPathFloatValues()
+        [Fact]
+        public void WhenFloatValues_BezierToPath_Should_RoundUpTo3Decimals()
         {
             var list = new List<BezierCurveSegment>
             {
@@ -67,11 +66,11 @@ namespace Rulyotano.Math.Tests.Interpolation.Bezier
             };
 
             var result = list.BezierToPath();
-            Assert.AreEqual("M1,2.436 C3.154,4.231 5.776,6.895 7.2,8.111", result);
+            Assert.Equal("M1,2.436 C3.154,4.231 5.776,6.895 7.2,8.111", result);
         }
 
-        [TestMethod("BezierToPath with negative values should works")]
-        public void BezierToPathNegativeValues()
+        [Fact]
+        public void WhenNegativeValues_BezierToPath_ShouldWorkOk()
         {
             var list = new List<BezierCurveSegment>
             {
@@ -83,7 +82,7 @@ namespace Rulyotano.Math.Tests.Interpolation.Bezier
             };
 
             var result = list.BezierToPath();
-            Assert.AreEqual("M-1,2.436 C-3.154,4.231 5.776,-6.895 7.2,-8.111", result);
+            Assert.Equal("M-1,2.436 C-3.154,4.231 5.776,-6.895 7.2,-8.111", result);
         }
     }
 }

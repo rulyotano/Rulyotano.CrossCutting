@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj" />
+  </ItemGroup>
+</Project>

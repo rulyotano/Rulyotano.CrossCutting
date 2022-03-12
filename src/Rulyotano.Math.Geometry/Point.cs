@@ -21,7 +21,7 @@
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return X.GetHashCode() << 10 + Y.GetHashCode();
         }
     }
 }

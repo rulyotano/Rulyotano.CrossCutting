@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net48;net5.0;</TargetFrameworks>
+    <Authors>Raul Otaño Hurtado</Authors>
+    <Company>rulyotano</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.Math</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rulyotano/Rulyotano.Math</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>Github</RepositoryType>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.35.0.42613" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalSuppresions.cs" />
+  </ItemGroup>
+</Project>

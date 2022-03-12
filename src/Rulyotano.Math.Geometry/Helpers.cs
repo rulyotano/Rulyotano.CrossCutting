@@ -9,10 +9,9 @@ namespace Rulyotano.Math.Geometry
         /// Convert from radians to degree
         /// </summary>
         /// <param name="radian"></param>
-        /// <returns></returns>
+        /// <returns>(180*radian)/Math.PI</returns>
         public static float RadianToDegreeConvert(float radian)
         {
-            //return (180*radian)/Math.PI;
             return 57.29577951308232f * radian;
         }
 

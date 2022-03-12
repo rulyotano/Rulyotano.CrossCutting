@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math", "src\Rulyotano.Math\Rulyotano.Math.csproj", "{9E744D23-1EA4-4E14-A366-44C50664AC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Geometry", "src\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj", "{710D18AC-5E40-4379-996F-0219476035A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Interpolation.Bezier", "src\Rulyotano.Math.Interpolation.Bezier\Rulyotano.Math.Interpolation.Bezier.csproj", "{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3C9D45B3-2695-4F99-8607-864FE7BE9D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Geometry.Tests", "tests\Rulyotano.Math.Geometry.Tests\Rulyotano.Math.Geometry.Tests.csproj", "{B489E9B4-1CCC-4C30-B30A-8012E84173E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Interpolation.Bezier.Tests", "tests\Rulyotano.Math.Interpolation.Bezier.Tests\Rulyotano.Math.Interpolation.Bezier.Tests.csproj", "{A727A61F-3D90-48F1-91D4-95824757045A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Tests", "tests\Rulyotano.Math.Tests\Rulyotano.Math.Tests.csproj", "{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E744D23-1EA4-4E14-A366-44C50664AC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E744D23-1EA4-4E14-A366-44C50664AC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E744D23-1EA4-4E14-A366-44C50664AC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E744D23-1EA4-4E14-A366-44C50664AC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710D18AC-5E40-4379-996F-0219476035A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710D18AC-5E40-4379-996F-0219476035A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710D18AC-5E40-4379-996F-0219476035A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710D18AC-5E40-4379-996F-0219476035A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B489E9B4-1CCC-4C30-B30A-8012E84173E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B489E9B4-1CCC-4C30-B30A-8012E84173E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B489E9B4-1CCC-4C30-B30A-8012E84173E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B489E9B4-1CCC-4C30-B30A-8012E84173E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A727A61F-3D90-48F1-91D4-95824757045A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A727A61F-3D90-48F1-91D4-95824757045A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A727A61F-3D90-48F1-91D4-95824757045A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A727A61F-3D90-48F1-91D4-95824757045A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E744D23-1EA4-4E14-A366-44C50664AC22} = {4714917E-893E-4433-806C-B0BD655B6DED}
+		{710D18AC-5E40-4379-996F-0219476035A2} = {4714917E-893E-4433-806C-B0BD655B6DED}
+		{A3938994-F6EF-47B9-AC2A-C7F73625CCF8} = {4714917E-893E-4433-806C-B0BD655B6DED}
+		{B489E9B4-1CCC-4C30-B30A-8012E84173E4} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+		{A727A61F-3D90-48F1-91D4-95824757045A} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+	EndGlobalSection
+EndGlobal

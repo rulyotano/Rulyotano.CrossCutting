@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Rulyotano.Math
+namespace Rulyotano.Math.Interpolation.Bezier
 {
     public static class InterpolationExtensionsBezier
     {
@@ -12,7 +12,7 @@ namespace Rulyotano.Math
             var builder = new StringBuilder();
             Func<double, double> round = n => System.Math.Round(n, 3);
 
-            if (bezierPaths.Count() > 0)
+            if (bezierPaths.Any())
             {
                 var head = bezierPaths.First();
                 builder.Append($"M{round(head.StartPoint.X)},{round(head.StartPoint.Y)}");

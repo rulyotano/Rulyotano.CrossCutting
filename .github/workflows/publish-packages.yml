@@ -46,3 +46,9 @@ jobs:
       with:
           PROJECT_FILE_PATH: src/Rulyotano.DataStructures/Rulyotano.DataStructures.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          
+    - name: Publish Rulyotano.Algorithms
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/Rulyotano.Algorithms/Rulyotano.Algorithms.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}

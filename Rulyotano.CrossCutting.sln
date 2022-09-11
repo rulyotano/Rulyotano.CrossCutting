@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.DataStructures", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.DataStructures.Tests", "tests\Rulyotano.DataStructures.Tests\Rulyotano.DataStructures.Tests.csproj", "{C72C2E35-DC32-4539-865D-8C8C05850ECA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D12385EF-F4C2-420C-B91F-4713963A5797}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms", "src\Rulyotano.Algorithms\Rulyotano.Algorithms.csproj", "{3FB63054-D885-4CE1-91BB-D185EF4999CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB63054-D885-4CE1-91BB-D185EF4999CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB63054-D885-4CE1-91BB-D185EF4999CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB63054-D885-4CE1-91BB-D185EF4999CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB63054-D885-4CE1-91BB-D185EF4999CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,7 @@ Global
 		{A727A61F-3D90-48F1-91D4-95824757045A} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
 		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
 		{C72C2E35-DC32-4539-865D-8C8C05850ECA} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+		{3FB63054-D885-4CE1-91BB-D185EF4999CF} = {D12385EF-F4C2-420C-B91F-4713963A5797}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83151B77-83FC-471D-8A55-7293A05FDB1A}

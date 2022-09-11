@@ -1,29 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math", "src\Rulyotano.Math\Rulyotano.Math.csproj", "{9E744D23-1EA4-4E14-A366-44C50664AC22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rulyotano.Math", "src\Rulyotano.Math\Rulyotano.Math.csproj", "{9E744D23-1EA4-4E14-A366-44C50664AC22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Geometry", "src\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj", "{710D18AC-5E40-4379-996F-0219476035A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rulyotano.Math.Geometry", "src\Rulyotano.Math.Geometry\Rulyotano.Math.Geometry.csproj", "{710D18AC-5E40-4379-996F-0219476035A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Interpolation.Bezier", "src\Rulyotano.Math.Interpolation.Bezier\Rulyotano.Math.Interpolation.Bezier.csproj", "{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rulyotano.Math.Interpolation.Bezier", "src\Rulyotano.Math.Interpolation.Bezier\Rulyotano.Math.Interpolation.Bezier.csproj", "{A3938994-F6EF-47B9-AC2A-C7F73625CCF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3C9D45B3-2695-4F99-8607-864FE7BE9D75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Geometry.Tests", "tests\Rulyotano.Math.Geometry.Tests\Rulyotano.Math.Geometry.Tests.csproj", "{B489E9B4-1CCC-4C30-B30A-8012E84173E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rulyotano.Math.Geometry.Tests", "tests\Rulyotano.Math.Geometry.Tests\Rulyotano.Math.Geometry.Tests.csproj", "{B489E9B4-1CCC-4C30-B30A-8012E84173E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Interpolation.Bezier.Tests", "tests\Rulyotano.Math.Interpolation.Bezier.Tests\Rulyotano.Math.Interpolation.Bezier.Tests.csproj", "{A727A61F-3D90-48F1-91D4-95824757045A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rulyotano.Math.Interpolation.Bezier.Tests", "tests\Rulyotano.Math.Interpolation.Bezier.Tests\Rulyotano.Math.Interpolation.Bezier.Tests.csproj", "{A727A61F-3D90-48F1-91D4-95824757045A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Math.Tests", "tests\Rulyotano.Math.Tests\Rulyotano.Math.Tests.csproj", "{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rulyotano.Math.Tests", "tests\Rulyotano.Math.Tests\Rulyotano.Math.Tests.csproj", "{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.DataStructures", "src\Rulyotano.DataStructures\Rulyotano.DataStructures.csproj", "{AC7F0BFF-7D3D-4D83-981D-3ACBB616FC0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.DataStructures.Tests", "tests\Rulyotano.DataStructures.Tests\Rulyotano.DataStructures.Tests.csproj", "{C72C2E35-DC32-4539-865D-8C8C05850ECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9E744D23-1EA4-4E14-A366-44C50664AC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -50,10 +51,25 @@ Global
 		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC7F0BFF-7D3D-4D83-981D-3ACBB616FC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7F0BFF-7D3D-4D83-981D-3ACBB616FC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7F0BFF-7D3D-4D83-981D-3ACBB616FC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7F0BFF-7D3D-4D83-981D-3ACBB616FC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72C2E35-DC32-4539-865D-8C8C05850ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B489E9B4-1CCC-4C30-B30A-8012E84173E4} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
 		{A727A61F-3D90-48F1-91D4-95824757045A} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
 		{2FC3E3D9-5B95-4B54-BC94-BE588BD4D7FF} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+		{C72C2E35-DC32-4539-865D-8C8C05850ECA} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83151B77-83FC-471D-8A55-7293A05FDB1A}
 	EndGlobalSection
 EndGlobal

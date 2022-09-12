@@ -42,6 +42,15 @@ namespace Rulyotano.DataStructures.Strings.Trie
         /// <returns></returns>
         public Trie<T> GetNode(string key)
             => GetNodePrivate(key);
+
+        public Trie<T> GetNode(char keyCharacter)
+        {
+            if (Children.TryGetValue(keyCharacter, out var child))
+            {
+                return child;
+            }
+            return null;
+        }
         
         private void AddPrivate(string key, Func<T, T> collisionResolver, Func<T> newCreator, int currentIndex = 0)
         {
@@ -61,7 +70,7 @@ namespace Rulyotano.DataStructures.Strings.Trie
             child.AddPrivate(key, collisionResolver, newCreator, currentIndex + 1);
         }
 
-        public Trie<T> GetNodePrivate(string key, int currentIndex = 0)
+        private Trie<T> GetNodePrivate(string key, int currentIndex = 0)
         {
             if (string.IsNullOrEmpty(key)) return null;
             if (currentIndex == key.Length)

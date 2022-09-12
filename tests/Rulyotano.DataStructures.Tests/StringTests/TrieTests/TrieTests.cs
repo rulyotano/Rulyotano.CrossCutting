@@ -197,6 +197,43 @@ public class TrieTests
         Assert.False(middleKeyNode.IsLeaf);
     }
 
+    [Fact]
+    public void When_GettingNodeFromCharacter_Should_ReturnChild()
+    {
+        var trie = GetTrie();
+        const string key = "abcd";
+        const string value = "aaa";
+        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+
+        var aNode = trie.GetNode('a');
+        var bNode = aNode.GetNode('b');
+        var cNode = bNode.GetNode('c');
+        var dNode = cNode.GetNode('d');
+        Assert.True(dNode.IsLeaf);
+        Assert.True(dNode.IsMatch);
+    }
+
+    [Fact]
+    public void When_GettingNodeFromCharacter_NotExistingKey_Should_ReturnNull()
+    {
+        var trie = GetTrie();
+        const string key = "abcd";
+        const string value = "aaa";
+        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+
+        var aNode = trie.GetNode('b');
+        Assert.Null(aNode);
+    }
+
+    [Fact]
+    public void When_GettingNodeFromCharacter_Empty_Should_ReturnNull()
+    {
+        var trie = GetTrie();
+
+        var aNode = trie.GetNode('a');
+        Assert.Null(aNode);
+    }
+
     private Trie<string> GetTrie() => new();
 
     private Func<string, string> GetCollisionResolver(string value)

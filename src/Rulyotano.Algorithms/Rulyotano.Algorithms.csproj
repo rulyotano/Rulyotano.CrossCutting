@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Rulyotano.Algorithms</PackageId>
+    <Description>Custom algorithms implementations.</Description>
+    <PackageTags>Algorithm</PackageTags>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.Algorithms</PackageProjectUrl>
+  </PropertyGroup>
+</Project>

@@ -3,7 +3,7 @@
     <TargetFrameworks>netstandard2.0;net48;net6.0;</TargetFrameworks>
     <Authors>Raul Otaño Hurtado</Authors>
     <Company>rulyotano</Company>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>10</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/rulyotano/Rulyotano.CrossCutting</RepositoryUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

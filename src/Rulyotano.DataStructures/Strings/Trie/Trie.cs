@@ -9,11 +9,24 @@ namespace Rulyotano.DataStructures.Strings.Trie
         public IDictionary<char, Trie<T>> Children { get; }
         public bool IsLeaf => Children.Count == 0;
         public bool IsMatch => Value is not null;
+        private readonly Func<T, T, T> _collisionResolverFunction;
 
         public Trie()
         {
             Children = new Dictionary<char, Trie<T>>();
+            _collisionResolverFunction = (existingValue, newItem) => newItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="collisionResolverFunction">Function to be used to resolve collision when adding new items to the Trie. By default take last added item.</param>
+        public Trie(Func<T, T, T> collisionResolverFunction) : this()
+        {
+            _collisionResolverFunction = collisionResolverFunction;
+        }
+
+
 
         /// <summary>
         /// Add item to the Trie.
@@ -21,8 +34,8 @@ namespace Rulyotano.DataStructures.Strings.Trie
         /// <param name="key">Key string to add</param>
         /// <param name="collisionResolver">Function to add value when already existed</param>
         /// <param name="newCreator">Function to add new value</param>
-        public void Add(string key, Func<T, T> collisionResolver, Func<T> newCreator)
-            => AddPrivate(key, collisionResolver, newCreator, 0);
+        public void Add(string key, T newValue)
+            => AddPrivate(key, newValue, 0);
 
         /// <summary>
         /// Get value matching key, null if not found
@@ -51,23 +64,23 @@ namespace Rulyotano.DataStructures.Strings.Trie
             }
             return null;
         }
-        
-        private void AddPrivate(string key, Func<T, T> collisionResolver, Func<T> newCreator, int currentIndex = 0)
+
+        private void AddPrivate(string key, T newValue, int currentIndex = 0)
         {
             if (string.IsNullOrEmpty(key)) return;
             if (currentIndex == key.Length)
             {
-                Value = IsMatch ? collisionResolver(Value) : newCreator();
+                Value = IsMatch ? _collisionResolverFunction(Value, newValue) : newValue;
                 return;
             }
             var currentCharacter = key[currentIndex];
             if (!Children.TryGetValue(currentCharacter, out var child))
             {
-                child = new Trie<T>();
+                child = CreateEmptyChild();
                 Children.Add(currentCharacter, child);
             }
 
-            child.AddPrivate(key, collisionResolver, newCreator, currentIndex + 1);
+            child.AddPrivate(key, newValue, currentIndex + 1);
         }
 
         private Trie<T> GetNodePrivate(string key, int currentIndex = 0)
@@ -85,5 +98,7 @@ namespace Rulyotano.DataStructures.Strings.Trie
 
             return child.GetNodePrivate(key, currentIndex + 1);
         }
+
+        private Trie<T> CreateEmptyChild() => new Trie<T>(_collisionResolverFunction);
     }
 }

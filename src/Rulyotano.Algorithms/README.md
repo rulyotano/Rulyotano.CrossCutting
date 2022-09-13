@@ -5,3 +5,4 @@
 Custom implementation of several Algorithms like:
 - Sorted Arrays:
 - - Binary Search
+- - Find insert index

@@ -1,4 +1,3 @@
-using System;
 using Rulyotano.DataStructures.Strings.Trie;
 using Xunit;
 
@@ -12,7 +11,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abc";
         const string value = "a";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var result = trie.Get(key);
         Assert.Equal(value, result);
@@ -24,7 +23,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abc";
         const string value = "a";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var result = trie.GetNode(key);
         Assert.Equal(value, result.Value);
@@ -35,12 +34,12 @@ public class TrieTests
     {
         var trie = GetTrie();
         const string value = "a";
-        trie.Add(null, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(null, value);
 
         var result = trie.GetNode(null);
         Assert.Null(result);
 
-        trie.Add(string.Empty, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(string.Empty, value);
         result = trie.GetNode(string.Empty);
         Assert.Null(result);
     }
@@ -51,7 +50,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abc";
         const string value = "a";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var result = trie.GetNode("not-existing-key");
         Assert.Null(result);
@@ -63,7 +62,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abc";
         const string value = "a";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var result = trie.Get("not-existing-key");
         Assert.Null(result);
@@ -75,7 +74,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abc";
         const string value = "a";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var result = trie.Get("ab");
         Assert.Null(result);
@@ -89,9 +88,9 @@ public class TrieTests
         const string value1 = "a";
         const string value2 = "b";
         const string value3 = "c";
-        trie.Add(key, GetCollisionResolver(value1), GetNewCreator(value1));
-        trie.Add(key, GetCollisionResolver(value2), GetNewCreator(value2));
-        trie.Add(key, GetCollisionResolver(value3), GetNewCreator(value3));
+        trie.Add(key, value1);
+        trie.Add(key, value2);
+        trie.Add(key, value3);
 
         var result = trie.Get(key);
         Assert.Equal("a,b,c", result);
@@ -106,14 +105,30 @@ public class TrieTests
         const string value1 = "a";
         const string value2 = "b";
         const string value3 = "c";
-        trie.Add(key1, GetCollisionResolver(value1), GetNewCreator(value1));
-        trie.Add(key2, GetCollisionResolver(value2), GetNewCreator(value2));
-        trie.Add(key1, GetCollisionResolver(value3), GetNewCreator(value3));
+        trie.Add(key1, value1);
+        trie.Add(key2, value2);
+        trie.Add(key1, value3);
 
         var result = trie.Get(key1);
         Assert.Equal("a,c", result);
         result = trie.Get(key2);
         Assert.Equal("b", result);
+    }
+
+    [Fact]
+    public void When_DefaultColisionResolver_Should_ResolveByUsingLastInsertedValue()
+    {
+        var trie = GetTrieDefaultResolver();
+        const string key = "abc";
+        const string value1 = "a";
+        const string value2 = "b";
+        const string value3 = "c";
+        trie.Add(key, value1);
+        trie.Add(key, value2);
+        trie.Add(key, value3);
+
+        var result = trie.Get(key);
+        Assert.Equal("c", result);
     }
 
     [Fact]
@@ -124,8 +139,8 @@ public class TrieTests
         const string newKey = "abc";
         const string value1 = "a";
         const string value2 = "b";
-        trie.Add(fullKey, GetCollisionResolver(value1), GetNewCreator(value1));
-        trie.Add(newKey, GetCollisionResolver(value2), GetNewCreator(value2));
+        trie.Add(fullKey, value1);
+        trie.Add(newKey, value2);
 
         var result = trie.Get(fullKey);
         Assert.Equal("a", result);
@@ -143,8 +158,8 @@ public class TrieTests
         const string newKey = "abcde";
         const string value1 = "a";
         const string value2 = "b";
-        trie.Add(oldSmallKey, GetCollisionResolver(value2), GetNewCreator(value2));
-        trie.Add(newKey, GetCollisionResolver(value1), GetNewCreator(value1));
+        trie.Add(oldSmallKey, value2);
+        trie.Add(newKey, value1);
 
         var result = trie.Get(oldSmallKey);
         Assert.Equal("b", result);
@@ -160,7 +175,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abcd";
         const string value = "aaa";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var result = trie.GetNode(key);
         Assert.Equal(value, result.Value);
@@ -175,7 +190,7 @@ public class TrieTests
         const string key = "abcd";
         const string middleKey = "abc";
         const string value = "aaa";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
         
         var result = trie.GetNode(middleKey);
         Assert.False(result.IsMatch);
@@ -189,9 +204,9 @@ public class TrieTests
         const string key = "abcd";
         const string middleKey = "ab";
         const string value = "aaa";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
         
-        trie.Add(middleKey, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(middleKey, value);
         var middleKeyNode = trie.GetNode(middleKey);
         Assert.True(middleKeyNode.IsMatch);
         Assert.False(middleKeyNode.IsLeaf);
@@ -203,7 +218,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abcd";
         const string value = "aaa";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var aNode = trie.GetNode('a');
         var bNode = aNode.GetNode('b');
@@ -219,7 +234,7 @@ public class TrieTests
         var trie = GetTrie();
         const string key = "abcd";
         const string value = "aaa";
-        trie.Add(key, GetCollisionResolver(value), GetNewCreator(value));
+        trie.Add(key, value);
 
         var aNode = trie.GetNode('b');
         Assert.Null(aNode);
@@ -234,12 +249,6 @@ public class TrieTests
         Assert.Null(aNode);
     }
 
-    private Trie<string> GetTrie() => new();
-
-    private Func<string, string> GetCollisionResolver(string value)
-        => (string oldValue) => $"{oldValue},{value}";
-
-    private Func<string> GetNewCreator(string value)
-        => () => value;
-
+    private Trie<string> GetTrie() => new((existingValue, newValue) => $"{existingValue},{newValue}");
+    private Trie<string> GetTrieDefaultResolver() => new();
 }

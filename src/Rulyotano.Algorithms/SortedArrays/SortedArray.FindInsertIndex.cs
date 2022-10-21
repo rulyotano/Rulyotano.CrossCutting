@@ -15,7 +15,12 @@ namespace Rulyotano.Algorithms.SortedArrays
         public static int FindInsertIndex<T>(IList<T> collection, Func<T, int> compareFunction)
         {
             if (collection.Count == 0) return 0;
-            var (_, bestIndex) = BinarySearch(collection, compareFunction, 0, collection.Count - 1);
+            var (foundIndex, bestIndex) = BinarySearch(collection, compareFunction, 0, collection.Count - 1);
+            if (foundIndex == NotFound && compareFunction(collection[bestIndex]) < 0)
+            {
+                bestIndex++;
+            }
+
             return bestIndex;
         }
     }

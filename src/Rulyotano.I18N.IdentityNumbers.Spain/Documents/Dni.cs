@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Rulyotano.Algorithms.IdentityNumbers.Spain.Documents
+namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
 {
     public class Dni : ISpanishDocument
     {

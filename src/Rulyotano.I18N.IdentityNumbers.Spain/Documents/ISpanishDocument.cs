@@ -1,4 +1,4 @@
-﻿namespace Rulyotano.Algorithms.IdentityNumbers.Spain.Documents
+﻿namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
 {
     public interface ISpanishDocument
     {

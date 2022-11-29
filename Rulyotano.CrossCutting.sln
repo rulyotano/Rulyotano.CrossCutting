@@ -27,11 +27,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.DataStructures.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.Tests", "tests\Rulyotano.Algorithms.Tests\Rulyotano.Algorithms.Tests.csproj", "{FEC6877F-F2DA-4221-826E-8755F7DB0572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.IdentityNumbers", "src\Rulyotano.Algorithms.IdentityNumbers\Rulyotano.Algorithms.IdentityNumbers.csproj", "{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.I18N.IdentityNumbers", "src\Rulyotano.I18N.IdentityNumbers\Rulyotano.I18N.IdentityNumbers.csproj", "{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.IdentityNumbers.Spain", "src\Rulyotano.Algorithms.IdentityNumbers.Spain\Rulyotano.Algorithms.IdentityNumbers.Spain.csproj", "{ED8F835B-2A25-414F-9A0E-7F33C35D5330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.I18N.IdentityNumbers.Spain", "src\Rulyotano.I18N.IdentityNumbers.Spain\Rulyotano.I18N.IdentityNumbers.Spain.csproj", "{ED8F835B-2A25-414F-9A0E-7F33C35D5330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.IdentityNumbers.Spain.Tests", "tests\Rulyotano.Algorithms.IdentityNumbers.Spain.Tests\Rulyotano.Algorithms.IdentityNumbers.Spain.Tests.csproj", "{F179785C-0D0B-4444-9636-5D64117B76AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.I18N.IdentityNumbers.Spain.Tests", "tests\Rulyotano.I18N.IdentityNumbers.Spain.Tests\Rulyotano.I18N.IdentityNumbers.Spain.Tests.csproj", "{F179785C-0D0B-4444-9636-5D64117B76AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

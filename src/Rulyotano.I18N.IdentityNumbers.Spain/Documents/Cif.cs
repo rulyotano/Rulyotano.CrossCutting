@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Rulyotano.Algorithms.IdentityNumbers.Spain.Documents
+namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
 {
-    public class Nie
+    public class Cif
     {
     }
 }

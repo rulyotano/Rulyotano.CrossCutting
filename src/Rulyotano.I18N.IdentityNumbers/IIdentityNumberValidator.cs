@@ -1,4 +1,4 @@
-﻿namespace Rulyotano.Algorithms.IdentityNumbers;
+﻿namespace Rulyotano.I18N.IdentityNumbers;
 
 public interface IIdentityNumberValidator
 {

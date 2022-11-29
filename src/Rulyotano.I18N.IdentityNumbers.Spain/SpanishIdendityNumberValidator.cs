@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Rulyotano.Algorithms.IdentityNumbers.Spain
+namespace Rulyotano.I18N.IdentityNumbers.Spain
 {
     public class SpanishIdendityNumberValidator : IIdentityNumberValidator
     {

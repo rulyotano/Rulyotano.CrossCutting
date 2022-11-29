@@ -1,8 +1,8 @@
-﻿using Rulyotano.Algorithms.IdentityNumbers.Spain.Documents;
+﻿using Rulyotano.I18N.IdentityNumbers.Spain.Documents;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Rulyotano.Algorithms.IdentityNumbers.Spain.Tests.DocumentsTests.DniTests
+namespace Rulyotano.I18N.IdentityNumbers.Spain.Tests.DocumentsTests.DniTests
 {
     public class DniWhenGenerating
     {

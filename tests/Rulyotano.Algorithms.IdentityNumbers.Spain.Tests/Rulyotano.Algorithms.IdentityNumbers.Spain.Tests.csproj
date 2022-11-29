@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Rulyotano.Algorithms.IdentityNumbers.Spain\Rulyotano.Algorithms.IdentityNumbers.Spain.csproj" />
+  </ItemGroup>
+</Project>

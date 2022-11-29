@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.DataStructures.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.Tests", "tests\Rulyotano.Algorithms.Tests\Rulyotano.Algorithms.Tests.csproj", "{FEC6877F-F2DA-4221-826E-8755F7DB0572}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.IdentityNumbers", "src\Rulyotano.Algorithms.IdentityNumbers\Rulyotano.Algorithms.IdentityNumbers.csproj", "{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.IdentityNumbers.Spain", "src\Rulyotano.Algorithms.IdentityNumbers.Spain\Rulyotano.Algorithms.IdentityNumbers.Spain.csproj", "{ED8F835B-2A25-414F-9A0E-7F33C35D5330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulyotano.Algorithms.IdentityNumbers.Spain.Tests", "tests\Rulyotano.Algorithms.IdentityNumbers.Spain.Tests\Rulyotano.Algorithms.IdentityNumbers.Spain.Tests.csproj", "{F179785C-0D0B-4444-9636-5D64117B76AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +79,18 @@ Global
 		{FEC6877F-F2DA-4221-826E-8755F7DB0572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC6877F-F2DA-4221-826E-8755F7DB0572}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC6877F-F2DA-4221-826E-8755F7DB0572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8F835B-2A25-414F-9A0E-7F33C35D5330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8F835B-2A25-414F-9A0E-7F33C35D5330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8F835B-2A25-414F-9A0E-7F33C35D5330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8F835B-2A25-414F-9A0E-7F33C35D5330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F179785C-0D0B-4444-9636-5D64117B76AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F179785C-0D0B-4444-9636-5D64117B76AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F179785C-0D0B-4444-9636-5D64117B76AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F179785C-0D0B-4444-9636-5D64117B76AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +106,9 @@ Global
 		{3FB63054-D885-4CE1-91BB-D185EF4999CF} = {D12385EF-F4C2-420C-B91F-4713963A5797}
 		{AC7F0BFF-7D3D-4D83-981D-3ACBB616FC0A} = {D12385EF-F4C2-420C-B91F-4713963A5797}
 		{FEC6877F-F2DA-4221-826E-8755F7DB0572} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
+		{297D0CE3-6D23-4BBB-88B4-EBD23C5C0E04} = {D12385EF-F4C2-420C-B91F-4713963A5797}
+		{ED8F835B-2A25-414F-9A0E-7F33C35D5330} = {D12385EF-F4C2-420C-B91F-4713963A5797}
+		{F179785C-0D0B-4444-9636-5D64117B76AC} = {3C9D45B3-2695-4F99-8607-864FE7BE9D75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83151B77-83FC-471D-8A55-7293A05FDB1A}

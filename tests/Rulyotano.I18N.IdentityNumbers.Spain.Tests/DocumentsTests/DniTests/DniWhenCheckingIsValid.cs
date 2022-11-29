@@ -19,6 +19,7 @@ namespace Rulyotano.I18N.IdentityNumbers.Spain.Tests.DocumentsTests.DniTests
         [InlineData("62905200Q")]
         [InlineData("47094434W")]
         [InlineData("33939726Y")]
+        [InlineData("60080190G")]
         public void Should_ValidateCorrectDocuments(string documentNumber)
         {
             Assert.True(_dniDocument.IsValid(documentNumber));

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -10,7 +11,7 @@ namespace Rulyotano.Math.Interpolation.Bezier
         public static string BezierToPath(this IEnumerable<BezierCurveSegment> bezierPaths)
         {
             var builder = new StringBuilder();
-            Func<double, double> round = n => System.Math.Round(n, 3);
+            Func<double, string> round = n => System.Math.Round(n, 3).ToString(CultureInfo.InvariantCulture);
 
             if (bezierPaths.Any())
             {

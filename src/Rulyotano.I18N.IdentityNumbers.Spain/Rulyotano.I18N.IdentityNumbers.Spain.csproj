@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Rulyotano.I18N.IdentityNumbers.Spain</PackageId>
+    <Description>Part of the internationalization library. Implementation for Spain of document identity numbers. Check if Spain national identity numbers are valid. Generate Spanish identity numbers. (Dni, Nie, Nif, Cif)</Description>
+    <PackageTags>Spain, Nie, Dni, Nif, Cif, Spanish Documents, I18n, Internationalization</PackageTags>
+    <Version>0.9.0</Version>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.I18N.IdentityNumbers.Spain</PackageProjectUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rulyotano.I18N.IdentityNumbers\Rulyotano.I18N.IdentityNumbers.csproj" />
+  </ItemGroup>
+</Project>

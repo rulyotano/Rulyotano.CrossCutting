@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Rulyotano.I18N.IdentityNumbers</PackageId>
+    <Description>Part of the internationalization library. Contracts and base clases and helpers for countries document identity numbers.</Description>
+    <PackageTags>I18n, Internationalization, Document Identity Numbers</PackageTags>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.I18N.IdentityNumbers</PackageProjectUrl>
+  </PropertyGroup>
+</Project>

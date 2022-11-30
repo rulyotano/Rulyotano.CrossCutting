@@ -2,10 +2,10 @@
 {
     public interface ISpanishDocument
     {
-        public bool IsOfType(string documentNumber);
-
         public bool IsValid(string documentNumber);
 
         public string Generate();
+
+        public bool MatchType(string documentType);
     }
 }

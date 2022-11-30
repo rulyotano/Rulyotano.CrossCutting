@@ -16,18 +16,24 @@ namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
             return ReplaceHeadingDigit(generatedNumber);
         }
 
-        public override bool IsOfType(string documentNumber)
-        {
-            var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
-            return new Regex(NieRegex).IsMatch(cleanDocumentNumber);
-        }
-
         public override bool IsValid(string documentNumber)
         {
             var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
             if (!IsOfType(cleanDocumentNumber)) return false;
             cleanDocumentNumber = ReplaceHeadingCharacter(cleanDocumentNumber);
             return CheckChecksumCharacter(cleanDocumentNumber);
+        }
+
+        public override bool MatchType(string documentType)
+        {
+            documentType = documentType?.ToUpperInvariant();
+            return documentType == DocumentConstants.Types.Nie || documentType == DocumentConstants.Types.Nif;
+        }
+
+        public bool IsOfType(string documentNumber)
+        {
+            var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
+            return new Regex(NieRegex).IsMatch(cleanDocumentNumber);
         }
 
         private static string ReplaceHeadingCharacter(string documentNumber)

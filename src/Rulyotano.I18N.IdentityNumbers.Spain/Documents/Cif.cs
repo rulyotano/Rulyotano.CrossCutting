@@ -24,17 +24,23 @@ namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
             return $"{organization}{number}{checksum}";
         }
 
-        public bool IsOfType(string documentNumber)
-        {
-            var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
-            return new Regex(CifRegex).IsMatch(cleanDocumentNumber);
-        }
-
         public bool IsValid(string documentNumber)
         {
             var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
             if (!IsOfType(cleanDocumentNumber)) return false;
             return CheckChecksumCharacter(cleanDocumentNumber);
+        }
+
+        public bool MatchType(string documentType)
+        {
+            documentType = documentType?.ToUpperInvariant();
+            return documentType == DocumentConstants.Types.Cif;
+        }
+
+        public bool IsOfType(string documentNumber)
+        {
+            var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
+            return new Regex(CifRegex).IsMatch(cleanDocumentNumber);
         }
 
         private bool CheckChecksumCharacter(string cleanDocumentNumber)
@@ -79,5 +85,6 @@ namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
             var organizationChar = organization[0];
             return 'N' <= organizationChar && organizationChar <= 'S' || organizationChar >= 'W';
         }
+
     }
 }

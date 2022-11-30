@@ -5,8 +5,8 @@ namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
     public abstract class PersonalDocument : ISpanishDocument
     {
         public abstract string Generate();
-        public abstract bool IsOfType(string documentNumber);
-        public abstract bool IsValid(string documentNumber);        
+        public abstract bool IsValid(string documentNumber);
+        public abstract bool MatchType(string documentType);
         protected static bool CheckChecksumCharacter(string cleanDocumentNumber)
         {
                 var number = int.Parse(cleanDocumentNumber.Substring(0, 8));

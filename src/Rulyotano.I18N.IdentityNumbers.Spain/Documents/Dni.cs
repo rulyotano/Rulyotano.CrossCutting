@@ -13,17 +13,23 @@ namespace Rulyotano.I18N.IdentityNumbers.Spain.Documents
             return Generate(MinValid, MaxValid);
         }
 
-        public override bool IsOfType(string documentNumber)
-        {
-            var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
-            return new Regex(DniRegex).IsMatch(cleanDocumentNumber);
-        }
-
         public override bool IsValid(string documentNumber)
         {
             var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
             if (!IsOfType(cleanDocumentNumber)) return false;
             return CheckChecksumCharacter(cleanDocumentNumber);
+        }
+
+        public override bool MatchType(string documentType)
+        {
+            documentType = documentType?.ToUpperInvariant();
+            return documentType == DocumentConstants.Types.Dni || documentType == DocumentConstants.Types.Nif;
+        }
+
+        public bool IsOfType(string documentNumber)
+        {
+            var cleanDocumentNumber = documentNumber?.ToUpperInvariant() ?? string.Empty;
+            return new Regex(DniRegex).IsMatch(cleanDocumentNumber);
         }
     }
 }

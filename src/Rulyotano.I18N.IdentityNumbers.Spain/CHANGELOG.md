@@ -1,7 +1,10 @@
 # Change Log
 
 ## [Unreleased]
-Use package reference to `Rulyotano.I18N.IdentityNumbers` and not project reference.
+
+## [1.0.0] - 2022-11-30
+### Changed
+- Use package reference to `Rulyotano.I18N.IdentityNumbers` and not project reference.
 
 ## [0.9.0] - 2022-11-30
 ### Added

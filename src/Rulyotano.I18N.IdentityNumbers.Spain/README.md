@@ -16,7 +16,7 @@ Identity numbers for Spain
 ## Install
 
 ```
-NuGet\Install-Package Rulyotano.I18N.IdentityNumbers.Spain -Version 1.0.0
+NuGet\Install-Package Rulyotano.I18N.IdentityNumbers.Spain
 ```
 
 ## Use it

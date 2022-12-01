@@ -14,7 +14,7 @@ Identity numbers for Spain
 - Generate them
 
 ## References
-[Cálculo del CIF](http://www.jagar.es/economia/ccif.htm)
-[Generador DNI](https://www.generador-de-dni.com/generador-de-dni)
-[Calculating the NIF/NIE check digit](https://www.ordenacionjuego.es/en/calculo-digito-control)
-[Cálculo del dígito de control del NIF/NIE](https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestiones/dni/calculo-del-digito-de-control-del-nif-nie/)
+- [Cálculo del CIF](http://www.jagar.es/economia/ccif.htm)
+- [Generador DNI](https://www.generador-de-dni.com/generador-de-dni)
+- [Calculating the NIF/NIE check digit](https://www.ordenacionjuego.es/en/calculo-digito-control)
+- [Cálculo del dígito de control del NIF/NIE](https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestiones/dni/calculo-del-digito-de-control-del-nif-nie/)

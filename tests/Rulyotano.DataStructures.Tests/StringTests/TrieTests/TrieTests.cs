@@ -249,6 +249,63 @@ public class TrieTests
         Assert.Null(aNode);
     }
 
+    [Fact]
+    public void When_Deleting_Should_RemoveFromItemFromResults()
+    {
+        var trie = GetTrie();
+        const string key = "abcd";
+        const string value = "aaa";
+        trie.Add(key, value);
+
+        var aNode = trie.Get(key);
+        Assert.NotNull(aNode);
+
+        trie.Delete(key); 
+        aNode = trie.Get(key);
+        Assert.Null(aNode);
+    }
+
+    [Fact]
+    public void When_Deleting_Should_RemoveNodes()
+    {
+        var trie = GetTrie();
+        const string key = "abcd";
+        const string value = "aaa";
+        trie.Add(key, value);
+
+        var valueResult = trie.Get(key);
+        Assert.NotNull(valueResult);
+
+        trie.Delete(key);
+        var aNode = trie.GetNode(key);
+        Assert.Null(aNode);
+    }
+
+    [Fact]
+    public void When_Deleting_Should_KeepOtherExistingValues()
+    {
+        var trie = GetTrie();
+        const string key1 = "abcd";
+        const string key2 = "abcde";
+        const string value = "aaa";
+        trie.Add(key1, value);
+        trie.Add(key2, value);
+
+        var valueResult1 = trie.Get(key1);
+        var valueResult2 = trie.Get(key1);
+        Assert.NotNull(valueResult1);
+        Assert.NotNull(valueResult2);
+
+        trie.Delete(key2);
+        var aNode = trie.GetNode(key2);
+        Assert.Null(aNode);
+
+        aNode = trie.GetNode(key1);
+        valueResult1 = trie.Get(key1);
+        Assert.NotNull(aNode);
+        Assert.NotNull(valueResult1);
+    }
+
     private Trie<string> GetTrie() => new((existingValue, newValue) => $"{existingValue},{newValue}");
     private Trie<string> GetTrieDefaultResolver() => new();
 }

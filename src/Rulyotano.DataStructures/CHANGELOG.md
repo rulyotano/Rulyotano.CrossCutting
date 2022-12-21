@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.2.1] - 2022-12-21
+### Changed
+- Avoid recursion to search nodes
+
 ## [1.2.0] - 2022-12-20
 ### Changed
 - Implement Trie delete method

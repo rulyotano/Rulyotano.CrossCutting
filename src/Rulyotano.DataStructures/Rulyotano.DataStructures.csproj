@@ -3,7 +3,7 @@
     <PackageId>Rulyotano.DataStructures</PackageId>
     <Description>Custom data structures implementations.</Description>
     <PackageTags>Data Structures, Algorithm</PackageTags>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.DataStructures</PackageProjectUrl>
   </PropertyGroup>
 </Project>

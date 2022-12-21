@@ -110,20 +110,26 @@ namespace Rulyotano.DataStructures.Strings.Trie
             }
         }
 
-        private Trie<T> GetNodePrivate(string key, int currentIndex = 0)
+        private Trie<T> GetNodePrivate(string key)
         {
             if (string.IsNullOrEmpty(key)) return null;
-            if (currentIndex == key.Length)
+
+            var currentIndex = 0;
+            var current = this;
+
+            while (currentIndex < key.Length)
             {
-                return this;
-            }
-            var currentCharacter = key[currentIndex];
-            if (!Children.TryGetValue(currentCharacter, out var child))
-            {
-                return null;
+                var currentCharacter = key[currentIndex];
+                if (!current.Children.TryGetValue(currentCharacter, out var child))
+                {
+                    return null;
+                }
+
+                current = child;
+                currentIndex++;
             }
 
-            return child.GetNodePrivate(key, currentIndex + 1);
+            return current;            
         }
 
         private Trie<T> CreateEmptyChild(Trie<T> parent, char key) => new Trie<T>(_collisionResolverFunction) { _parent = parent, _key = key };

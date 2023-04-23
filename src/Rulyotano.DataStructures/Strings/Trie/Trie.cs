@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Rulyotano.DataStructures.Strings.Trie
 {
@@ -46,6 +47,7 @@ namespace Rulyotano.DataStructures.Strings.Trie
         /// <returns></returns>
         public T Get(string key)
         {
+            if (key == string.Empty) return Value;
             var node = GetNode(key);
             return node?.Value;
         }
@@ -73,6 +75,18 @@ namespace Rulyotano.DataStructures.Strings.Trie
             if (trie == null) return;
             trie.Value = null; 
             RemoveEmptyNodes(trie);
+        }
+
+        /// <summary>
+        /// Get all items having this key as prefix
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetAll(string key)
+        {
+            var resultNode = GetNodePrivate(key);
+            if (resultNode is null) return Enumerable.Empty<T>();
+            return resultNode.GetAll();
         }
 
         private void AddPrivate(string key, T newValue)
@@ -112,7 +126,8 @@ namespace Rulyotano.DataStructures.Strings.Trie
 
         private Trie<T> GetNodePrivate(string key)
         {
-            if (string.IsNullOrEmpty(key)) return null;
+            if (key == string.Empty) return this;
+            if (key is null) return null;
 
             var currentIndex = 0;
             var current = this;
@@ -133,5 +148,17 @@ namespace Rulyotano.DataStructures.Strings.Trie
         }
 
         private Trie<T> CreateEmptyChild(Trie<T> parent, char key) => new Trie<T>(_collisionResolverFunction) { _parent = parent, _key = key };
+
+        private IEnumerable<T> GetAll()
+        {
+            if (IsMatch) yield return Value;
+            foreach (var child in Children.Values)
+            {
+                foreach (var childValue in child.GetAll())
+                {
+                    yield return childValue;
+                }
+            }
+        }
     }
 }

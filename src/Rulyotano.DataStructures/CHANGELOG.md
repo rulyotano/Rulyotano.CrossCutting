@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.2.2] - 2023-04-23
+### Changed
+- Trie added GetAll method to find all matches with the same prefix. Assert that when empty prefix should match root node.
+
 ## [1.2.1] - 2022-12-21
 ### Changed
 - Avoid recursion to search nodes

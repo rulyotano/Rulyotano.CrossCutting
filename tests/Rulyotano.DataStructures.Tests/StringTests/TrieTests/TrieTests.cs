@@ -1,4 +1,5 @@
 using Rulyotano.DataStructures.Strings.Trie;
+using System.Linq;
 using Xunit;
 
 namespace Rulyotano.DataStructures.Tests;
@@ -41,7 +42,7 @@ public class TrieTests
 
         trie.Add(string.Empty, value);
         result = trie.GetNode(string.Empty);
-        Assert.Null(result);
+        Assert.Equal(trie, result);
     }
 
     [Fact]
@@ -57,6 +58,19 @@ public class TrieTests
     }
 
     [Fact]
+    public void When_GettingNodeWithEmptyString_Should_ReturnRootNode()
+    {
+        var trie = GetTrie();
+        const string key = "abc";
+        const string value = "a";
+        trie.Add(key, value);
+        var insertedTrie = trie.GetNode(key);
+
+        var result = insertedTrie.GetNode(string.Empty);
+        Assert.Equal(insertedTrie, result);
+    }
+
+    [Fact]
     public void When_GettingNotExistingValue_Should_ReturnNull()
     {
         var trie = GetTrie();
@@ -66,6 +80,20 @@ public class TrieTests
 
         var result = trie.Get("not-existing-key");
         Assert.Null(result);
+    }
+
+    [Fact]
+    public void When_GettingValueWithEmptyString_Should_ReturnRootNode()
+    {
+        var trie = GetTrie();        
+        const string key = "abc";
+        const string value = "a";
+        trie.Add(key, value);
+        var insertedTrie = trie.GetNode(key);
+
+
+        var result = insertedTrie.Get(string.Empty);
+        Assert.Equal(insertedTrie.Value, result);
     }
 
     [Fact]
@@ -304,6 +332,55 @@ public class TrieTests
         valueResult1 = trie.Get(key1);
         Assert.NotNull(aNode);
         Assert.NotNull(valueResult1);
+    }
+
+    [Fact]
+    public void When_GetAll_ShouldReturnAllChildrenMatching()
+    {
+        var trie = GetTrie();
+        const string key1 = "abcd";
+        const string key2 = "abcde";
+        const string key3 = "abcdaf";
+        const string key4 = "acd";
+        trie.Add(key1, key1);
+        trie.Add(key2, key2);
+        trie.Add(key3, key3);
+        trie.Add(key4, key4);
+
+        var result = trie.GetAll("abcd").ToList();
+
+        Assert.Equal(3, result.Count);
+        Assert.Equal(key1, result[0]);
+        Assert.Equal(key2, result[1]);
+        Assert.Equal(key3, result[2]);
+    }
+
+    [Fact]
+    public void When_GetAllAndNotFound_ShouldReturnEmptyCollection()
+    {
+        var trie = GetTrie();
+
+        var result = trie.GetAll("abcd").ToList();
+
+        Assert.Empty(result);
+    }
+
+    [Fact]
+    public void When_GetAllWithEmptyString_ShouldReturnAll()
+    {
+        var trie = GetTrie();
+        const string key1 = "abcd";
+        const string key2 = "abcde";
+        const string key3 = "abcdaf";
+        const string key4 = "acd";
+        trie.Add(key1, key1);
+        trie.Add(key2, key2);
+        trie.Add(key3, key3);
+        trie.Add(key4, key4);
+
+        var result = trie.GetAll(string.Empty).ToList();
+
+        Assert.Equal(4, result.Count);
     }
 
     private Trie<string> GetTrie() => new((existingValue, newValue) => $"{existingValue},{newValue}");

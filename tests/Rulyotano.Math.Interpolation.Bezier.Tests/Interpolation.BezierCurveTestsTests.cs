@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Rulyotano.Math.Interpolation.Bezier.Tests
 {
-    public class InterpolationExtensionsBezierTests
+    public class BezierCurveTests
     {
         [Fact]
         public void WhenEmpty_BezierToPath_Should_ReturnEmpty()
         {
             var list = new List<BezierCurveSegment>();
 
-            var result = list.BezierToPath();
+            var result = GetCurve(list).ToPath();
             Assert.Equal("", result);
         }
 
@@ -26,7 +26,7 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
                     new Geometry.Point(7, 8))
             };
 
-            var result = list.BezierToPath();
+            var result = GetCurve(list).ToPath();
             Assert.Equal("M1,2 C3,4 5,6 7,8", result);
         }
 
@@ -48,7 +48,7 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
                     new Geometry.Point(13, 14))
             };
 
-            var result = list.BezierToPath();
+            var result = GetCurve(list).ToPath();
             Assert.Equal("M1,2 C3,4 5,6 7,8 C9,10 11,12 13,14", result);
         }
 
@@ -64,7 +64,7 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
                     new Geometry.Point(7.199999, 8.111111))
             };
 
-            var result = list.BezierToPath();
+            var result = GetCurve(list).ToPath();
             Assert.Equal("M1,2.436 C3.154,4.231 5.776,6.895 7.2,8.111", result);
         }
 
@@ -80,8 +80,10 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
                     new Geometry.Point(7.199999, -8.111111))
             };
 
-            var result = list.BezierToPath();
+            var result = GetCurve(list).ToPath();
             Assert.Equal("M-1,2.436 C-3.154,4.231 5.776,-6.895 7.2,-8.111", result);
         }
+
+        private BezierCurve GetCurve(IEnumerable<BezierCurveSegment> segments) => new BezierCurve(segments);
     }
 }

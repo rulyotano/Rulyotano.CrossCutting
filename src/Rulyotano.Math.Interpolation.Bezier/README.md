@@ -27,14 +27,14 @@ A more detailed usage example can be found at this wpf sample: [rulyotano/wpf-be
 ### Reference for this Bezier Curves Interpolation Algorithm
 
 - See this article: [Interpolate 2D points, using Bezier curves in WPF](http://www.codeproject.com/Articles/769055/Interpolate-2D-points-usign-Bezier-curves-in-WPF)
+- See [live DEMO](https://rulyotano.com/demos/bezier) using the same algorithm but it is implemented for javascript.
 
 ### Converting to Bezier Interpolation results to svg path
 
 You can convert the result of the `PointsToBezierCurves` by using an extension method named `BezierToPath`:
 
 ``` c#
-  var result = BezierInterpolation.PointsToBezierCurves(samplePoints1.ToList(), false);
-  var path = TestDataBezier.TestCas1.ExpectedOutput.BezierToPath();
+  var path = BezierInterpolation.PointsToBezierCurves(samplePoints1.ToList(), false).ToPath();
 ```
 
 This will generate a path string like this, that can be used in `xaml` or `html`:

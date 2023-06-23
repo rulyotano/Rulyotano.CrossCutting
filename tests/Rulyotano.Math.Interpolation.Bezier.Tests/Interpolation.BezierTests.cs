@@ -14,8 +14,8 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var result = BezierInterpolation.PointsToBezierCurves(_samplePoints1.ToList(), false);
 
-            Assert.Equal(_samplePoints1.First(), result.First().StartPoint);
-            Assert.Equal(_samplePoints1.Last(), result.Last().EndPoint);
+            Assert.Equal(_samplePoints1.First(), result.Segments.First().StartPoint);
+            Assert.Equal(_samplePoints1.Last(), result.Segments.Last().EndPoint);
         }
 
         [Fact]
@@ -23,8 +23,8 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var result = BezierInterpolation.PointsToBezierCurves(_samplePoints1.ToList(), true);
 
-            Assert.Equal(_samplePoints1.First(), result.First().StartPoint);
-            Assert.Equal(_samplePoints1.First(), result.Last().EndPoint);
+            Assert.Equal(_samplePoints1.First(), result.Segments.First().StartPoint);
+            Assert.Equal(_samplePoints1.First(), result.Segments.Last().EndPoint);
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
         {
             var result = BezierInterpolation.PointsToBezierCurves(_samplePoints1.Take(2).ToList(), false);
 
-            Assert.Empty(result);
+            Assert.Empty(result.Segments);
         }
 
         private void RunTestCase(TestCaseBezier testCase)
@@ -41,9 +41,10 @@ namespace Rulyotano.Math.Interpolation.Bezier.Tests
                 ? BezierInterpolation.PointsToBezierCurves(testCase.InputPoints, testCase.IsClosed, testCase.Smooth.Value)
                 : BezierInterpolation.PointsToBezierCurves(testCase.InputPoints, testCase.IsClosed);
 
-            for (int i = 0; i < result.Count; i++)
+            var segments = result.Segments.ToList(); 
+            for (int i = 0; i < segments.Count; i++)
             {
-                Assert.Equal(testCase.ExpectedOutput[i], result[i]);
+                Assert.Equal(testCase.ExpectedOutput[i], segments[i]);
             }
         }
 

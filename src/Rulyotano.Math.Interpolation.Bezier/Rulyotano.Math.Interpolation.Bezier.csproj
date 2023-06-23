@@ -3,7 +3,7 @@
     <PackageId>Rulyotano.Math.Interpolation.Bezier</PackageId>
     <Description>Tools for interpolation a set of 2D points by using Cubic Bezier Curves algorithm.</Description>
     <PackageTags>Interpolation, Bezier, Curves, Points, 2D, Math</PackageTags>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
     <PackageProjectUrl>https://github.com/rulyotano/Rulyotano.CrossCutting/tree/main/src/Rulyotano.Math.Interpolation.Bezier</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>

@@ -20,14 +20,13 @@ namespace Rulyotano.Algorithms.Strings
             {
                 if (s[i] == s[prevLpsIndex])
                 {
-                    lps[i] = lps[prevLpsIndex] + 1;
+                    lps[i] = prevLpsIndex + 1;
                     prevLpsIndex++;
                     i++;
                 } 
-                else if (s[prevLpsIndex] == 0)
+                else if (prevLpsIndex == 0)
                 {
                     lps[i] = 0;
-                    prevLpsIndex = 0;
                     i++;
                 }
                 else
@@ -43,7 +42,7 @@ namespace Rulyotano.Algorithms.Strings
 
 /*
  
-A A A A X A
-0 1 2 3 0 0
-    p   i 
+a b c
+0 0 0
+p i 
  */

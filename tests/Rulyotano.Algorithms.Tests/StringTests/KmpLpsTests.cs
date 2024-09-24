@@ -8,35 +8,35 @@ namespace Rulyotano.Algorithms.Tests.StringTests
         [Fact]
         public void WhenLengthIsZeroShouldReturnEmptyArray()
         {
-            var result = KmpLps.CalcualteLps(string.Empty);
+            var result = KmpLps.CalculateLps(string.Empty);
             Assert.Empty(result);
         }
 
         [Fact]
         public void WhenNullShouldReturnEmptyArray()
         {
-            var result = KmpLps.CalcualteLps(null);
+            var result = KmpLps.CalculateLps(null);
             Assert.Empty(result);
         }
 
         [Fact]
         public void WhenLengthIsOneShouldReturnSingleZeroArray()
         {
-            var result = KmpLps.CalcualteLps("A");
+            var result = KmpLps.CalculateLps("A");
             Assert.Equal("0", ResultToString(result));
         }
 
         [Fact]
         public void WhenTwoEqualLettersShouldReturnArray01()
         {
-            var result = KmpLps.CalcualteLps("AA");
+            var result = KmpLps.CalculateLps("AA");
             Assert.Equal("0,1", ResultToString(result));
         }
 
         [Fact]
         public void WhenAllItemsAreDifferentShouldReturnAllZeros()
         {
-            var result = KmpLps.CalcualteLps("abc");
+            var result = KmpLps.CalculateLps("abc");
             Assert.Equal("0,0,0", ResultToString(result));
         }
 
@@ -46,7 +46,7 @@ namespace Rulyotano.Algorithms.Tests.StringTests
         [InlineData("abccba", "0,0,0,0,0,1")]
         public void ShouldBuildCorrectLongestPrefixSuffixForAllThePositions(string testCase, string expectedResult)
         {
-            var result = KmpLps.CalcualteLps(testCase);
+            var result = KmpLps.CalculateLps(testCase);
             Assert.Equal(expectedResult, ResultToString(result));
         }
 

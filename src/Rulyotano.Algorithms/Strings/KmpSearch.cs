@@ -32,7 +32,7 @@ namespace Rulyotano.Algorithms.Strings
                 || text.Length < s.Length)
                 yield break;
 
-            var lpf = KmpLps.CalcualteLps(s);
+            var lpf = KmpLps.CalculateLps(s);
             var i = 0;
             var si = 0;
             while (i < text.Length)

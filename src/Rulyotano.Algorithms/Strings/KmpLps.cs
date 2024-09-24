@@ -3,11 +3,21 @@
 namespace Rulyotano.Algorithms.Strings
 {
     /// <summary>
-    /// Longest Prefix Sufix
+    /// Longest Prefix Suffix
     /// </summary>
     public static class KmpLps
     {
-        public static int[] CalcualteLps(string s)
+        /// <summary>
+        /// Calculate the Longest Prefix Suffix array for a string.
+        /// Each position i in the resulting array will be the size of the longest prefix, that is a suffix at that position.
+        /// For example:
+        /// for "abcdabcxabcd" the returning array will be [0,0,0,0,1,2,3,0,1,2,3,4]
+        /// note that at position 6 we have a 3. The string up to that index is "abcdabc..."
+        /// note that the ending of the string is "...abc" which is equal to the start of "abcd..."
+        /// </summary>
+        /// <param name="s">String to calculate the LPS</param>
+        /// <returns>Lps array</returns>
+        public static int[] CalculateLps(string s)
         {
             if (s == null)
                 return Array.Empty<int>();
@@ -39,10 +49,3 @@ namespace Rulyotano.Algorithms.Strings
         }
     }
 }
-
-/*
- 
-a b c
-0 0 0
-p i 
- */

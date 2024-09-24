@@ -6,8 +6,6 @@ namespace Rulyotano.Algorithms.Tests.StringTests
 {
     public class KmpSearchAllOccurrencesTests
     {
-        private const int NotFound = -1;
-
         [Theory]
         [InlineData("", "abc")]
         [InlineData("abc", "")]

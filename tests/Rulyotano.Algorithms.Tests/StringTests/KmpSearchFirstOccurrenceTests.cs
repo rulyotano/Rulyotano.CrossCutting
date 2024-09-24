@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Rulyotano.Algorithms.Tests.StringTests
 {
-    public class KmpSearchTests
+    public class KmpSearchFirstOccurrenceTests
     {
         private const int NotFound = -1;
 
@@ -14,63 +14,63 @@ namespace Rulyotano.Algorithms.Tests.StringTests
         [InlineData("abc", null)]
         public void WhenNullOrEmptyShouldReturnNotFound(string text, string s)
         {
-            var result = text.SearchFirstOccurence(s);
+            var result = text.SearchFirstOccurrence(s);
             Assert.Equal(NotFound, result);
         }
         
         [Fact]
         public void WhenTextLengthIsLowerThanSearchLengthShouldReturnNotFound()
         {
-            var result = "ab".SearchFirstOccurence("abc");
+            var result = "ab".SearchFirstOccurrence("abc");
             Assert.Equal(NotFound, result);
         }
 
         [Fact]
         public void WhenEqualStringsShouldReturnZero()
         {
-            var result = "abc".SearchFirstOccurence("abc");
+            var result = "abc".SearchFirstOccurrence("abc");
             Assert.Equal(0, result);
         }
 
         [Fact]
         public void WhenAreNotEqualsShouldReturnNotFound()
         {
-            var result = "abd".SearchFirstOccurence("abc");
+            var result = "abd".SearchFirstOccurrence("abc");
             Assert.Equal(NotFound, result);
         }
 
         [Fact]
         public void WhenFirstOccurenceIsNotStartingOfStringShouldReturnCorrectIndex()
         {
-            var result = "aaaabcdefg".SearchFirstOccurence("abc");
+            var result = "aaaabcdefg".SearchFirstOccurrence("abc");
             Assert.Equal(3, result);
         }
 
         [Fact]
-        public void WhenCorrenceIsAtTheEndOfTheStringShouldReturnCorrectIndex()
+        public void WhenOccurenceIsAtTheEndOfTheStringShouldReturnCorrectIndex()
         {
-            var result = "abeateabc".SearchFirstOccurence("abc");
+            var result = "abeateabc".SearchFirstOccurrence("abc");
             Assert.Equal(6, result);
         }
 
         [Fact]
         public void WhenThereIsNoOccurenceShouldReturnNotFound()
         {
-            var result = "aaab".SearchFirstOccurence("abc");
+            var result = "aaab".SearchFirstOccurrence("abc");
             Assert.Equal(-1, result);
         }
 
         [Fact]
         public void SameCharacterShouldReturnFirstOccurence()
         {
-            var result = "aaaaa".SearchFirstOccurence("aaa");
+            var result = "aaaaa".SearchFirstOccurrence("aaa");
             Assert.Equal(0, result);
         }
 
         [Fact]
         public void AnotherCase()
         {
-            var result = "abceabcfabceabck".SearchFirstOccurence("abceabck");
+            var result = "abceabcfabceabck".SearchFirstOccurrence("abceabck");
             Assert.Equal(8, result);
         }
     }

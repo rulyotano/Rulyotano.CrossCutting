@@ -6,6 +6,12 @@ namespace Rulyotano.Algorithms.Strings
     {
         private const int NotFoundValue = -1;
 
+        /// <summary>
+        /// Search for the first occurrence of "s" in "text" using Kmp algorithm O(n+m)
+        /// </summary>
+        /// <param name="text">Text where search for the first "s" occurrence</param>
+        /// <param name="s">String to search in "text"</param>
+        /// <returns>First occurence index or NotFound = -1</returns>
         public static int SearchFirstOccurrence(this string text, string s)
         {
             using var allOccurrencesEnumerator = SearchAllOccurrences(text, s).GetEnumerator();
@@ -13,6 +19,12 @@ namespace Rulyotano.Algorithms.Strings
             return allOccurrencesEnumerator.MoveNext() ? allOccurrencesEnumerator.Current : NotFoundValue;
         }
 
+        /// <summary>
+        /// Search for all the occurrences of "s" in "text" using Kmp algorithm O(n+m)
+        /// </summary>
+        /// <param name="text">Text where search for the all "s" occurrences</param>
+        /// <param name="s">String to search in "text"</param>
+        /// <returns>Enumerable of indexes where match is found. Empty if there is no occurrences</returns>
         public static IEnumerable<int> SearchAllOccurrences(this string text, string s)
         {
             if (string.IsNullOrEmpty(text) 

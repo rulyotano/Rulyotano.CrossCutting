@@ -3,6 +3,9 @@
 
 # Rulyotano.Algorithms
 Custom implementation of several Algorithms like:
+
 - Sorted Arrays:
-- - Binary Search
-- - Find insert index
+  - Binary Search
+  - Find insert index
+- Strings:
+  - Kmp Search and Lps (longest prefix suffix) array calculation

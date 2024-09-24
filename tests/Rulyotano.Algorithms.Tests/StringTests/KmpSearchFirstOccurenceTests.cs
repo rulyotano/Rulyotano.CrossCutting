@@ -59,5 +59,19 @@ namespace Rulyotano.Algorithms.Tests.StringTests
             var result = "aaab".SearchFirstOccurence("abc");
             Assert.Equal(-1, result);
         }
+
+        [Fact]
+        public void SameCharacterShouldReturnFirstOccurence()
+        {
+            var result = "aaaaa".SearchFirstOccurence("aaa");
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void AnotherCase()
+        {
+            var result = "abceabcfabceabck".SearchFirstOccurence("abceabck");
+            Assert.Equal(8, result);
+        }
     }
 }

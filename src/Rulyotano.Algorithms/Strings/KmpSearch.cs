@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Rulyotano.Algorithms.Strings
+﻿namespace Rulyotano.Algorithms.Strings
 {
     public static class KmpSearch
     {
@@ -15,20 +11,26 @@ namespace Rulyotano.Algorithms.Strings
                 || text.Length < s.Length)
                 return NotFoundValue;
 
+            var lpf = KmpLps.CalcualteLps(s);
             var i = 0;
+            var si = 0;
             while (i < text.Length)
             {
-                var si = 0;
-                while (si < s.Length)
+                if (text[i] == s[si])
                 {
-                    if (i + si >= text.Length || text[i + si] != s[si])
-                        break;
+                    if (si == s.Length - 1)
+                        return i - si;
+                    i++;
                     si++;
                 }
-
-                if (si == s.Length)
-                    return i;
-                i++;
+                else if (si == 0)
+                {
+                    i++;
+                }
+                else
+                {
+                    si = lpf[si - 1];
+                }
             }
 
             return NotFoundValue;
